@@ -4,8 +4,8 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
-func Sum[T constraints.Integer](m *Multi[T]) T {
-	var sum T = 0
+func Sum[T constraints.Ordered](m *Multi[T]) T {
+	var sum T
 	for _, v := range m.Values {
 		sum += v
 	}
